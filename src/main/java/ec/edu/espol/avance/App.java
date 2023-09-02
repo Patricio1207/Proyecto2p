@@ -1,7 +1,9 @@
 package ec.edu.espol.avance;
 
+import ec.edu.espol.avance.model.Vehiculo;
+import ec.edu.espol.avance.model.Usuario;
 import archivos.manejoArchivos;
-import static ec.edu.espol.avance.Usuario.añadirUsuario;
+import static ec.edu.espol.avance.model.Usuario.añadirUsuario;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import javafx.application.Application;
