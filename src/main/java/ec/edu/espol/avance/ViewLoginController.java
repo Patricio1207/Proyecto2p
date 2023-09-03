@@ -76,11 +76,11 @@ public class ViewLoginController implements Initializable {
         String txtContra = this.txtContra.getText();
         if(validarUsuario(txtUsuario,txtContra)){
             try {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("viewMenuVC.fxml"));
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("MenuTipoUsuario.fxml"));
 
                 Parent root = loader.load();
 
-                ViewMenuVCController controlador = loader.getController();
+                MenuTipoUsuarioController controlador = loader.getController();
 
                 Scene scene = new Scene(root);
                 Stage stage = new Stage();
@@ -88,7 +88,6 @@ public class ViewLoginController implements Initializable {
                 stage.setScene(scene);
                 stage.show();
 
-                stage.setOnCloseRequest(e -> controlador.closeWindows());
 
                 Stage myStage = (Stage) this.btnLogin.getScene().getWindow();
                 myStage.close();
@@ -101,6 +100,26 @@ public class ViewLoginController implements Initializable {
 
     @FXML
     private void regresar(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("viewMenu.fxml"));
+
+            Parent root = loader.load();
+
+            ViewMenuController controlador = loader.getController();
+
+            Scene scene = new Scene(root);
+            Stage stage = new Stage();
+
+            stage.setScene(scene);
+            stage.show();
+
+
+            Stage myStage = (Stage) this.btnRegresar.getScene().getWindow();
+            myStage.close();
+            
+        } catch (Exception ex) {
+        ex.printStackTrace();
+        }
     }
     
 }

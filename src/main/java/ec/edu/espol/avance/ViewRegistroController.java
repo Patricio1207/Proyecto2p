@@ -74,9 +74,9 @@ public class ViewRegistroController implements Initializable {
     
     @FXML
     private void registrarUsuario(ActionEvent event) {
-        
-        String txtUsuario = this.txtUsuario.getText();
-        String txtContra = this.txtContra.getText();
+        String stUsuario = this.txtUsuario.getText();
+        String stContra = this.txtContra.getText();
+
         
         ArrayList<Usuario> usuarios = readUsers();
 
@@ -84,7 +84,7 @@ public class ViewRegistroController implements Initializable {
 
         // Verificar si el correo ya existe en la lista
         for (Usuario usuario : usuarios) {
-            if (usuario.getCorreoElectronico().equals(txtUsuario)) {
+            if (usuario.getCorreoElectronico().equals(stUsuario)) {
                 usuarioExistente = true;
                 break;
             }
@@ -97,7 +97,7 @@ public class ViewRegistroController implements Initializable {
             alert.setContentText("Usuario existente");
         } else {
             // Crear un nuevo objeto Usuario con los datos ingresados
-            Usuario nuevoUsuario = new Usuario(txtUsuario, txtContra);
+            Usuario nuevoUsuario = new Usuario(stUsuario, stContra);
             // Agregar el nuevo Usuario al ArrayList
             usuarios.add(nuevoUsuario);
             // Llamar al método para guardar los usuarios en el archivo serializado
@@ -105,12 +105,34 @@ public class ViewRegistroController implements Initializable {
 
             alert.setContentText("Usuario registrado");
         }
-        alert.showAndWait(); 
+        alert.showAndWait();
+        txtUsuario.clear();
+        txtContra.clear();
         
     }
 
     @FXML
     private void regresar(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("viewMenu.fxml"));
+
+            Parent root = loader.load();
+
+            ViewMenuController controlador = loader.getController();
+
+            Scene scene = new Scene(root);
+            Stage stage = new Stage();
+
+            stage.setScene(scene);
+            stage.show();
+
+
+            Stage myStage = (Stage) this.btnRegresar.getScene().getWindow();
+            myStage.close();
+            
+        } catch (IOException ex) {
+        Logger.getLogger(ViewMenuController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
 }

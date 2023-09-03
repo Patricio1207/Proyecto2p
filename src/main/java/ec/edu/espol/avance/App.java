@@ -170,7 +170,7 @@ public class App extends Application {
             }
     }
     
-    public static void mostrarVehiculos(String tipo,double recInf,double recSup,int anoInf,int anoSup,double precioInf,double precioSup) {
+    public static ArrayList<Vehiculo> mostrarVehiculos(String tipo,double recInf,double recSup,int anoInf,int anoSup,double precioInf,double precioSup) {
         ArrayList<Vehiculo> vehic = new ArrayList<>();
         //Primero se deben filtrar los datos
 
@@ -189,7 +189,7 @@ public class App extends Application {
         if (precioInf > 0 && precioSup > 0 && precioInf <= precioSup) {
             vehic = Vehiculo.filter(precioInf, precioSup, vehic, "precio");
         }
-        
+        return vehic;//Cambié para que me dé la lista filtrada
         //Mostrar al usuario
 //        for (int i = 0; i < vehic.size(); i++) {
 //            System.out.println("Vehiculo" + (i + 1));
@@ -202,13 +202,13 @@ public class App extends Application {
 //                tipoVeh = "Moto";
 //            }
 
-        System.out.println("placa: " + vehic.get(0).getPlaca()
-                    + "\nModelo: " + vehic.get(0).getModelo()
-                    + "\nAño: " + vehic.get(0).getAño()
-                    + "\nRecordido: " + vehic.get(0).getRecorrido()
-                    + "\nPrecio: " + vehic.get(0).getPrecio()
-                    + "\nModelo: " + vehic.get(0).getModelo()
-                    + "\nTipo: " + tipo);
+//        System.out.println("placa: " + vehic.get(0).getPlaca()
+//                    + "\nModelo: " + vehic.get(0).getModelo()
+//                    + "\nAño: " + vehic.get(0).getAño()
+//                    + "\nRecordido: " + vehic.get(0).getRecorrido()
+//                    + "\nPrecio: " + vehic.get(0).getPrecio()
+//                    + "\nModelo: " + vehic.get(0).getModelo()
+//                    + "\nTipo: " + tipo);
         
     }
 }

@@ -71,28 +71,28 @@ public class ViewRegistroVehiculoController implements Initializable {
         
     } 
     
-    public void closeWindows()
-    {     
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("viewMenuVC.fxml"));
-            
-            Parent root = loader.load();
-            
-            ViewMenuVCController controlador = loader.getController();
-            
-            Scene scene = new Scene(root);
-            Stage stage = new Stage();
-            
-            stage.setScene(scene);
-            stage.show();
-            
-            Stage myStage = (Stage) this.btnRegresar.getScene().getWindow();
-            myStage.close();
-            
-        } catch (IOException ex) {
-            Logger.getLogger(ViewMenuController.class.getName()).log(Level.SEVERE, null, ex);
-        }   
-    }
+//    public void closeWindows()
+//    {     
+//        try {
+//            FXMLLoader loader = new FXMLLoader(getClass().getResource("viewMenuVC.fxml"));
+//            
+//            Parent root = loader.load();
+//            
+//            ViewMenuVCController controlador = loader.getController();
+//            
+//            Scene scene = new Scene(root);
+//            Stage stage = new Stage();
+//            
+//            stage.setScene(scene);
+//            stage.show();
+//            
+//            Stage myStage = (Stage) this.btnRegresar.getScene().getWindow();
+//            myStage.close();
+//            
+//        } catch (IOException ex) {
+//            Logger.getLogger(ViewMenuController.class.getName()).log(Level.SEVERE, null, ex);
+//        }   
+//    }
 
     @FXML
     private void registrarVehiculo(ActionEvent event) {
@@ -125,6 +125,30 @@ public class ViewRegistroVehiculoController implements Initializable {
             alert.setTitle("Registrar Vehiculo");
             alert.setContentText("Vehiculo ya esta registrado");
             alert.showAndWait();
+        }
+    }
+
+    @FXML
+    private void regresar(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("MenuVCVendedor.fxml"));
+
+            Parent root = loader.load();
+
+            MenuVCVendedorController controlador = loader.getController();
+
+            Scene scene = new Scene(root);
+            Stage stage = new Stage();
+
+            stage.setScene(scene);
+            stage.show();
+
+
+            Stage myStage = (Stage) this.btnRegresar.getScene().getWindow();
+            myStage.close();
+            
+        } catch (Exception ex) {
+        ex.printStackTrace();
         }
     }
     

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ec.edu.espol.avance.MenuVCCompradorController">
+   <top>
+      <VBox fx:id="vb1" prefHeight="71.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <Text fx:id="tx1" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Text>
+            <Text fx:id="tx2" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+         </children>
+      </VBox>
+   </top>
+   <center>
+      <TableView fx:id="tbvw" prefHeight="218.0" prefWidth="443.0" BorderPane.alignment="CENTER">
+         <columns>
+            <TableColumn fx:id="placaColumn" prefWidth="75.0" text="Placa" />
+            <TableColumn fx:id="marcaColumn" prefWidth="75.0" text="Marca" />
+            <TableColumn fx:id="modeloColumn" prefWidth="75.0" text="Modelo" />
+            <TableColumn fx:id="tipoMotorColumn" prefWidth="75.0" text="Motor" />
+            <TableColumn fx:id="añoColumn" minWidth="4.0" prefWidth="75.0" text="Año" />
+            <TableColumn fx:id="recorridoColumn" prefWidth="75.0" text="Recorrido" />
+            <TableColumn fx:id="colorColumn" prefWidth="75.0" text="Color" />
+            <TableColumn fx:id="combustibleColumn" prefWidth="75.0" text="Combustible" />
+            <TableColumn fx:id="precioColumn" prefWidth="75.0" text="Precio" />
+            <TableColumn fx:id="tipoColumn" prefWidth="75.0" text="Tipo" />
+         </columns></TableView>
+   </center>
+   <bottom>
+      <HBox fx:id="hb1" prefHeight="54.0" prefWidth="586.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="btnRegresar" mnemonicParsing="false" onAction="#regresar" text="Button" />
+         </children>
+      </HBox>
+   </bottom>
+   <right>
+      <VBox prefHeight="259.0" prefWidth="204.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox prefHeight="36.0" prefWidth="204.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Tipo:" wrappingWidth="94.236328125" />
+                  <ComboBox fx:id="cbTipo" prefHeight="31.0" prefWidth="103.0" promptText="Tipo" />
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <padding>
+                  <Insets left="5.0" />
+               </padding>
+            </HBox>
+            <HBox prefHeight="25.0" prefWidth="199.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Rango del año:" wrappingWidth="129.404296875">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Text>
+               </children>
+               <VBox.margin>
+                  <Insets left="5.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox alignment="CENTER" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="38.0" prefWidth="204.0" spacing="2.0">
+               <children>
+                  <TextField fx:id="txAñoMen" prefHeight="31.0" prefWidth="100.0" promptText="Menor" />
+                  <TextField fx:id="txAñoMay" prefHeight="31.0" prefWidth="100.0" promptText="Mayor" />
+               </children>
+            </HBox>
+            <HBox maxHeight="-Infinity" minHeight="-Infinity" prefHeight="25.0" prefWidth="204.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Rango de recorrido:">
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin>
+                  </Text>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="38.0" prefWidth="204.0" spacing="2.0">
+               <children>
+                  <TextField fx:id="txRecMen" prefHeight="31.0" prefWidth="100.0" promptText="Menor" />
+                  <TextField fx:id="txRecMay" minHeight="-Infinity" prefHeight="31.0" prefWidth="100.0" promptText="Mayor" />
+               </children>
+            </HBox>
+            <HBox maxHeight="-Infinity" minHeight="-Infinity" prefHeight="25.0" prefWidth="204.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Rango de precio:" />
+               </children>
+               <padding>
+                  <Insets left="5.0" />
+               </padding>
+            </HBox>
+            <HBox alignment="CENTER" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="38.0" prefWidth="200.0" spacing="2.0">
+               <children>
+                  <TextField fx:id="txPreMen" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="31.0" prefWidth="100.0" promptText="Menor" />
+                  <TextField fx:id="txPreMay" maxWidth="-Infinity" minHeight="-Infinity" prefHeight="31.0" prefWidth="100.0" promptText="Mayor" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="48.0" prefWidth="204.0">
+               <children>
+                  <Button fx:id="btnFiltrar" mnemonicParsing="false" onAction="#filtrar" text="Filtrar" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </right>
+</BorderPane>

@@ -78,7 +78,7 @@ public class ViewMenuVCController implements Initializable {
             stage.setScene(scene);
             stage.show();
             
-            stage.setOnCloseRequest(e -> controlador.closeWindows());
+//            stage.setOnCloseRequest(e -> controlador.closeWindows());
             
             Stage myStage = (Stage) this.btnRegistrarV.getScene().getWindow();
             myStage.close();
