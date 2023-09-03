@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
  */
-package ec.edu.espol.avance;
+package ec.edu.espol.avance.controller;
 
 import java.io.IOException;
 import java.util.logging.Level;
@@ -42,7 +42,7 @@ public class ViewMenuController implements Initializable {
     private void ingresar(ActionEvent event) {
         
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("viewLogin.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/ec/edu/espol/avance/viewLogin.fxml"));
             
             Parent root = loader.load();
             
@@ -69,7 +69,7 @@ public class ViewMenuController implements Initializable {
     private void registrar(ActionEvent event) {
         
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("viewRegistro.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/ec/edu/espol/avance/viewRegistro.fxml"));
             
             Parent root = loader.load();
             

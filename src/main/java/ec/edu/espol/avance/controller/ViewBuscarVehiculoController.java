@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
  */
-package ec.edu.espol.avance;
+package ec.edu.espol.avance.controller;
 
 import static ec.edu.espol.avance.App.mostrarVehiculos;
 import java.io.IOException;
@@ -59,7 +59,7 @@ public class ViewBuscarVehiculoController implements Initializable {
     public void closeWindows()
     {     
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("viewMenuVC.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/ec/edu/espol/avance/viewMenuVC.fxml"));
             
             Parent root = loader.load();
             

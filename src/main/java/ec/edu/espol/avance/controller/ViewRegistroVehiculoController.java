@@ -2,9 +2,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
  */
-package ec.edu.espol.avance;
+package ec.edu.espol.avance.controller;
 
-import static ec.edu.espol.avance.Vehiculo.existVehiculo;
+import ec.edu.espol.avance.App;
+import ec.edu.espol.avance.model.Auto;
+import static ec.edu.espol.avance.model.Vehiculo.existVehiculo;
 import static ec.edu.espol.avance.App.addVehiculo;
 import java.io.IOException;
 import java.net.URL;
@@ -74,7 +76,7 @@ public class ViewRegistroVehiculoController implements Initializable {
     public void closeWindows()
     {     
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("viewMenuVC.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/ec/edu/espol/avance/viewMenuVC.fxml"));
             
             Parent root = loader.load();
             

@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/20.0.1" fx:controller="ec.edu.espol.avance.ViewLoginController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/20.0.1" fx:controller="ec.edu.espol.avance.controller.ViewLoginController">
    <children>
       <Button fx:id="btnLogin" layoutX="234.0" layoutY="222.0" mnemonicParsing="false" onAction="#login" text="Login" />
       <Button fx:id="btnRegresar" layoutX="301.0" layoutY="222.0" mnemonicParsing="false" onAction="#regresar" text="Regresar" />
