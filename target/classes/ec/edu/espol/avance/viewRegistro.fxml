@@ -12,7 +12,7 @@
       <PasswordField fx:id="txtContra" layoutX="226.0" layoutY="165.0" prefHeight="25.0" prefWidth="178.0" />
       <Label layoutX="154.0" layoutY="124.0" text="Usuario" />
       <Label layoutX="154.0" layoutY="169.0" text="Contraseña" />
-      <Button fx:id="btnRegistrar" layoutX="243.0" layoutY="210.0" mnemonicParsing="false" onAction="#registrarUsuario" text="Registrar" />
-      <Button fx:id="btnRegresar" layoutX="327.0" layoutY="210.0" mnemonicParsing="false" onAction="#regresar" text="Regresar" />
+      <Button fx:id="btnRegistrar" layoutX="243.0" layoutY="210.0" mnemonicParsing="false" onMouseClicked="#registrarUsuario" text="Registrar" />
+      <Button fx:id="btnRegresar" layoutX="327.0" layoutY="210.0" mnemonicParsing="false" onMouseClicked="#regresar" text="Regresar" />
    </children>
 </AnchorPane>

@@ -97,7 +97,7 @@ public class ViewRegistroVehiculoController implements Initializable {
     }
 
     @FXML
-    private void registrarVehiculo(ActionEvent event) {
+    private void registrarVehiculo(MouseEvent event) {
         String cboxTipo = this.cboxTipo.getValue();
         String txtPlaca = this.txtPlaca.getText();
         String txtMarca = this.txtMarca.getText();
@@ -111,6 +111,7 @@ public class ViewRegistroVehiculoController implements Initializable {
         int txtAno = Integer.parseInt(this.txtAno.getText());
         String txtTransmision = this.txtTransmision.getText();
         
+
         Auto a = new Auto(txtPlaca,txtMarca,txtModelo,txtMotor,txtAno,txtRecorrido,txtColor,txtCombustible,txtPrecio,txtVidrios,txtTransmision);
         
         if(!existVehiculo(a,App.vehiculos)){
@@ -129,5 +130,30 @@ public class ViewRegistroVehiculoController implements Initializable {
             alert.showAndWait();
         }
     }
+
+    @FXML
+    private void regresar(MouseEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/ec/edu/espol/avance/viewMenuVC.fxml"));
+            
+            Parent root = loader.load();
+            
+            ViewMenuVCController controlador = loader.getController();
+            
+            Scene scene = new Scene(root);
+            Stage stage = new Stage();
+            
+            stage.setScene(scene);
+            stage.show();
+            
+            Stage myStage = (Stage) this.btnRegresar.getScene().getWindow();
+            myStage.close();
+            
+        } catch (IOException ex) {
+            Logger.getLogger(ViewMenuController.class.getName()).log(Level.SEVERE, null, ex);
+        } 
+    }
+
+  
     
 }

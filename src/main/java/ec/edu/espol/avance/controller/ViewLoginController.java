@@ -20,6 +20,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 /**
@@ -70,7 +71,7 @@ public class ViewLoginController implements Initializable {
     }
        
     @FXML
-    private void login(ActionEvent event)
+    private void login(MouseEvent event)
     {    
         String txtUsuario = this.txtUsuario.getText();
         String txtContra = this.txtContra.getText();
@@ -100,7 +101,26 @@ public class ViewLoginController implements Initializable {
     }
 
     @FXML
-    private void regresar(ActionEvent event) {
+    private void regresar(MouseEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/ec/edu/espol/avance/viewMenu.fxml"));
+            
+            Parent root = loader.load();
+            
+            ViewMenuController controlador = loader.getController();
+            
+            Scene scene = new Scene(root);
+            Stage stage = new Stage();
+            
+            stage.setScene(scene);
+            stage.show();
+            
+            Stage myStage = (Stage) this.btnRegresar.getScene().getWindow();
+            myStage.close();
+            
+        } catch (IOException ex) {
+            Logger.getLogger(ViewMenuController.class.getName()).log(Level.SEVERE, null, ex);
+        } 
     }
     
 }

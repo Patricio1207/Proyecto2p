@@ -16,6 +16,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 /**
@@ -39,7 +40,7 @@ public class ViewMenuController implements Initializable {
     }    
 
     @FXML
-    private void ingresar(ActionEvent event) {
+    private void ingresar(MouseEvent event) {
         
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/ec/edu/espol/avance/viewLogin.fxml"));
@@ -66,7 +67,7 @@ public class ViewMenuController implements Initializable {
     }
 
     @FXML
-    private void registrar(ActionEvent event) {
+    private void registrar(MouseEvent event) {
         
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/ec/edu/espol/avance/viewRegistro.fxml"));

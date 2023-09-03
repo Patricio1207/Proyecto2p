@@ -38,7 +38,7 @@
             <Font name="System Bold" size="18.0" />
          </font>
       </Label>
-      <Button fx:id="btnRegresar" layoutX="327.0" layoutY="335.0" mnemonicParsing="false" text="Regresar" />
-      <Button fx:id="btnRegistrarV" layoutX="244.0" layoutY="335.0" mnemonicParsing="false" onAction="#registrarVehiculo" text="Registrar" />
+      <Button fx:id="btnRegresar" layoutX="327.0" layoutY="335.0" mnemonicParsing="false" onMouseClicked="#regresar" text="Regresar" />
+      <Button fx:id="btnRegistrarV" layoutX="244.0" layoutY="335.0" mnemonicParsing="false" onMouseClicked="#registrarVehiculo" text="Registrar" />
    </children>
 </AnchorPane>

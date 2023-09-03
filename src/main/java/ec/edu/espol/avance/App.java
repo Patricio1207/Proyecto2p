@@ -47,7 +47,7 @@ public class App extends Application {
     public static void main(String[] args) 
     {
         ArrayList<Usuario> usuarios = new ArrayList<>();
-        serializar(usuarios);
+        serializarU(usuarios);
         launch();
         System.out.println(vehiculos);
         
@@ -61,7 +61,7 @@ public class App extends Application {
 //        // Agregar más usuarios según necesites
 //    }
 
-    public static void serializar(ArrayList<Usuario> usuarios)
+    public static void serializarU(ArrayList<Usuario> usuarios)
     {   
 //        for(Usuario objeto:usuarios){
 //            try {
@@ -86,6 +86,7 @@ public class App extends Application {
                 System.out.println("No se pudo escribir");
             }
     }
+    
     
     public static ArrayList<Usuario> deSerializar(String archivo)
     {
@@ -147,6 +148,7 @@ public class App extends Application {
         }
     }
     
+    
     public static ArrayList<Usuario> readUsers() {
         ArrayList<Usuario> listaUsuarios = new ArrayList<>();
         try (FileInputStream fileIn = new FileInputStream("usuarios.ser");
@@ -158,6 +160,7 @@ public class App extends Application {
         }
         return listaUsuarios;
     }
+    
     
     public static void addVehiculo(Vehiculo veh){
         vehiculos.add(veh);

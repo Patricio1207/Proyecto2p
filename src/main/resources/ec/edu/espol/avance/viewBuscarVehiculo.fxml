@@ -22,7 +22,7 @@
       <Label layoutX="65.0" layoutY="237.0" text="Precio inf" />
       <Label layoutX="329.0" layoutY="179.0" text="Año sup" />
       <Label layoutX="324.0" layoutY="237.0" text="Precio sup" />
-      <Button fx:id="btnFiltrar" layoutX="211.0" layoutY="293.0" mnemonicParsing="false" onAction="#filtrar" text="Filtrar" />
-      <Button fx:id="btnRegresar" layoutX="326.0" layoutY="293.0" mnemonicParsing="false" onAction="#regresar" text="Regresar" />
+      <Button fx:id="btnFiltrar" layoutX="211.0" layoutY="293.0" mnemonicParsing="false" onMouseClicked="#filtrar" text="Filtrar" />
+      <Button fx:id="btnRegresar" layoutX="326.0" layoutY="293.0" mnemonicParsing="false" onMouseClicked="#regresar" text="Regresar" />
    </children>
 </AnchorPane>
