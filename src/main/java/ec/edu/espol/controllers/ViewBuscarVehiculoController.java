@@ -4,7 +4,8 @@
  */
 package ec.edu.espol.controllers;
 
-import static ec.edu.espol.avance.App.mostrarVehiculos;
+import ec.edu.espol.avance.App;
+import static ec.edu.espol.avance.App.filtrarVehiculos;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -90,7 +91,7 @@ public class ViewBuscarVehiculoController implements Initializable {
         double txtPrecioInf = Double.parseDouble(this.txtPrecioInf.getText());
         double txtPrecioSup = Double.parseDouble(this.txtPrecioSup.getText());
         
-        mostrarVehiculos(cboxTipo,txtRecInf,txtRecSup,txtAnoInf,txtAnoSup,txtPrecioInf,txtPrecioSup);
+        filtrarVehiculos(cboxTipo,txtRecInf,txtRecSup,txtAnoInf,txtAnoSup,txtPrecioInf,txtPrecioSup,App.vehiculos);
     }
 
     @FXML

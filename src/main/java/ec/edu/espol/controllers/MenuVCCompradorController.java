@@ -29,7 +29,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import static ec.edu.espol.avance.App.mostrarVehiculos;
+import static ec.edu.espol.avance.App.filtrarVehiculos;
 
 /**
  * FXML Controller class
@@ -154,7 +154,7 @@ public class MenuVCCompradorController implements Initializable {
             int añoSup = Integer.parseInt(txAñoMay.getText());
             double preInf = Double.parseDouble(txPreMen.getText());
             double preSup = Double.parseDouble(txPreMay.getText());
-            ArrayList<Vehiculo> vehiculosFiltrados = mostrarVehiculos(tipo,recInf,recSup,añoInf,añoSup,preInf,preSup);
+            ArrayList<Vehiculo> vehiculosFiltrados = filtrarVehiculos(tipo,recInf,recSup,añoInf,añoSup,preInf,preSup,vehiculos);
             
             placaColumn.setCellValueFactory(cellData -> new ReadOnlyStringWrapper(cellData.getValue().getPlaca()));
             marcaColumn.setCellValueFactory(cellData -> new ReadOnlyStringWrapper(cellData.getValue().getMarca()));

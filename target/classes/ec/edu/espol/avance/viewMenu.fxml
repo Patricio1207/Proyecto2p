@@ -1,11 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ec.edu.espol.controllers.ViewMenuController">
-   <children>
-      <Button fx:id="btnIngresar" layoutX="274.0" layoutY="151.0" mnemonicParsing="false" onMouseClicked="#ingresar" text="Ingresar" />
-      <Button fx:id="btnRegistrar" layoutX="274.0" layoutY="200.0" mnemonicParsing="false" onMouseClicked="#registrar" text="Registrar" />
-   </children>
-</AnchorPane>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ec.edu.espol.controllers.ViewMenuController">
+   <top>
+      <Text fill="#3b6dd0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bienvenido a Vehiculos S.A." wrappingWidth="364.93017578125" BorderPane.alignment="CENTER">
+         <font>
+            <Font size="30.0" />
+         </font>
+         <BorderPane.margin>
+            <Insets top="50.0" />
+         </BorderPane.margin>
+      </Text>
+   </top>
+   <center>
+      <VBox alignment="CENTER" prefHeight="305.0" prefWidth="600.0" spacing="15.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="btnIngresar" mnemonicParsing="false" onAction="#ingresar" text="Ingresar" />
+            <Button fx:id="btnRegistrar" mnemonicParsing="false" onAction="#registrar" text="Registrar" />
+         </children>
+         <BorderPane.margin>
+            <Insets bottom="65.0" />
+         </BorderPane.margin>
+      </VBox>
+   </center>
+</BorderPane>

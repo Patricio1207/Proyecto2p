@@ -199,13 +199,16 @@ public class App extends Application {
             }
     }
     
-    public static ArrayList<Vehiculo> mostrarVehiculos(String tipo,double recInf,double recSup,int anoInf,int anoSup,double precioInf,double precioSup) {
+    public static ArrayList<Vehiculo> filtrarVehiculos(String tipo,double recInf,double recSup,int anoInf,int anoSup,double precioInf,double precioSup,ArrayList<Vehiculo> vehiculos) {
         ArrayList<Vehiculo> vehic = new ArrayList<>();
         //Primero se deben filtrar los datos
+        System.out.println(vehiculos);
+        System.out.println(vehic);
 
         if (!tipo.equals("")) {
             vehic = Vehiculo.filter(tipo, vehiculos);
         }
+        System.out.println(vehic);
 
         if (recInf > 0 && recSup > 0 && recInf <= recSup) {
             vehic = Vehiculo.filter(recInf, recSup, vehic, "recorrido");
@@ -218,6 +221,7 @@ public class App extends Application {
         if (precioInf > 0 && precioSup > 0 && precioInf <= precioSup) {
             vehic = Vehiculo.filter(precioInf, precioSup, vehic, "precio");
         }
+        System.out.println(vehic);
         return vehic;//Cambié para que me dé la lista filtrada
         //Mostrar al usuario
 //        for (int i = 0; i < vehic.size(); i++) {

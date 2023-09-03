@@ -5,10 +5,10 @@
 package ec.edu.espol.controllers;
 
 import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -16,13 +16,12 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 /**
  * FXML Controller class
  *
- * @author Patricio Vásquez
+ * @author Personal
  */
 public class ViewMenuController implements Initializable {
 
@@ -40,8 +39,7 @@ public class ViewMenuController implements Initializable {
     }    
 
     @FXML
-    private void ingresar(MouseEvent event) {
-        
+    private void ingresar(ActionEvent event) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/ec/edu/espol/avance/viewLogin.fxml"));
             
@@ -63,12 +61,10 @@ public class ViewMenuController implements Initializable {
         } catch (IOException ex) {
             Logger.getLogger(ViewMenuController.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
     }
 
     @FXML
-    private void registrar(MouseEvent event) {
-        
+    private void registrar(ActionEvent event) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/ec/edu/espol/avance/viewRegistro.fxml"));
             
@@ -84,7 +80,7 @@ public class ViewMenuController implements Initializable {
             
             stage.setOnCloseRequest(e -> controlador.closeWindows());
             
-            Stage myStage = (Stage) this.btnIngresar.getScene().getWindow();
+            Stage myStage = (Stage) this.btnRegistrar.getScene().getWindow();
             myStage.close();
             
         } catch (IOException ex) {
