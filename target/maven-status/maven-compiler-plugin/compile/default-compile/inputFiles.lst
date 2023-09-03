@@ -1,18 +1,19 @@
-C:\Users\Personal\Proyecto2p\src\main\java\ec\edu\espol\avance\SecondaryController.java
-C:\Users\Personal\Proyecto2p\src\main\java\ec\edu\espol\avance\MenuTipoUsuarioController.java
-C:\Users\Personal\Proyecto2p\src\main\java\ec\edu\espol\avance\MenuCambiarContraseñaController.java
-C:\Users\Personal\Proyecto2p\src\main\java\ec\edu\espol\avance\ViewBuscarVehiculoController.java
-C:\Users\Personal\Proyecto2p\src\main\java\archivos\manejoArchivos.java
-C:\Users\Personal\Proyecto2p\src\main\java\ec\edu\espol\avance\PrimaryController.java
-C:\Users\Personal\Proyecto2p\src\main\java\ec\edu\espol\avance\Auto.java
-C:\Users\Personal\Proyecto2p\src\main\java\ec\edu\espol\avance\Vehiculo.java
-C:\Users\Personal\Proyecto2p\src\main\java\ec\edu\espol\avance\ViewMenuVCController.java
-C:\Users\Personal\Proyecto2p\src\main\java\ec\edu\espol\avance\MenuVCCompradorController.java
-C:\Users\Personal\Proyecto2p\src\main\java\ec\edu\espol\avance\App.java
-C:\Users\Personal\Proyecto2p\src\main\java\ec\edu\espol\avance\ViewLoginController.java
-C:\Users\Personal\Proyecto2p\src\main\java\ec\edu\espol\avance\ViewRegistroController.java
-C:\Users\Personal\Proyecto2p\src\main\java\ec\edu\espol\avance\MenuVCVendedorController.java
-C:\Users\Personal\Proyecto2p\src\main\java\ec\edu\espol\avance\ViewMenuController.java
-C:\Users\Personal\Proyecto2p\src\main\java\ec\edu\espol\avance\ViewRegistroVehiculoController.java
-C:\Users\Personal\Proyecto2p\src\main\java\module-info.java
-C:\Users\Personal\Proyecto2p\src\main\java\ec\edu\espol\avance\Usuario.java
+C:\Users\Patricio Vásquez\Desktop\Clon2ppp\Proyecto2p\src\main\java\ec\edu\espol\controllers\MenuVCCompradorController.java
+C:\Users\Patricio Vásquez\Desktop\Clon2ppp\Proyecto2p\src\main\java\ec\edu\espol\controllers\ViewBuscarVehiculoController.java
+C:\Users\Patricio Vásquez\Desktop\Clon2ppp\Proyecto2p\src\main\java\ec\edu\espol\controllers\ViewMenuVCController.java
+C:\Users\Patricio Vásquez\Desktop\Clon2ppp\Proyecto2p\src\main\java\archivos\manejoArchivos.java
+C:\Users\Patricio Vásquez\Desktop\Clon2ppp\Proyecto2p\src\main\java\ec\edu\espol\model\Vehiculo.java
+C:\Users\Patricio Vásquez\Desktop\Clon2ppp\Proyecto2p\src\main\java\ec\edu\espol\controllers\ViewRegistroController.java
+C:\Users\Patricio Vásquez\Desktop\Clon2ppp\Proyecto2p\src\main\java\ec\edu\espol\controllers\ViewMenuController.java
+C:\Users\Patricio Vásquez\Desktop\Clon2ppp\Proyecto2p\src\main\java\ec\edu\espol\model\Usuario.java
+C:\Users\Patricio Vásquez\Desktop\Clon2ppp\Proyecto2p\src\main\java\module-info.java
+C:\Users\Patricio Vásquez\Desktop\Clon2ppp\Proyecto2p\src\main\java\ec\edu\espol\avance\App.java
+C:\Users\Patricio Vásquez\Desktop\Clon2ppp\Proyecto2p\src\main\java\ec\edu\espol\controllers\MenuCambiarContraseñaController.java
+C:\Users\Patricio Vásquez\Desktop\Clon2ppp\Proyecto2p\src\main\java\ec\edu\espol\controllers\ViewLoginController.java
+C:\Users\Patricio Vásquez\Desktop\Clon2ppp\Proyecto2p\src\main\java\ec\edu\espol\model\Auto.java
+C:\Users\Patricio Vásquez\Desktop\Clon2ppp\Proyecto2p\src\main\java\ec\edu\espol\model\Oferta.java
+C:\Users\Patricio Vásquez\Desktop\Clon2ppp\Proyecto2p\src\main\java\ec\edu\espol\controllers\ViewRegistroVehiculoController.java
+C:\Users\Patricio Vásquez\Desktop\Clon2ppp\Proyecto2p\src\main\java\ec\edu\espol\model\Motocicleta.java
+C:\Users\Patricio Vásquez\Desktop\Clon2ppp\Proyecto2p\src\main\java\ec\edu\espol\controllers\MenuTipoUsuarioController.java
+C:\Users\Patricio Vásquez\Desktop\Clon2ppp\Proyecto2p\src\main\java\ec\edu\espol\model\Camioneta.java
+C:\Users\Patricio Vásquez\Desktop\Clon2ppp\Proyecto2p\src\main\java\ec\edu\espol\controllers\MenuVCVendedorController.java

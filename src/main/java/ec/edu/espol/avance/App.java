@@ -1,7 +1,9 @@
 package ec.edu.espol.avance;
 
+import ec.edu.espol.model.Vehiculo;
+import ec.edu.espol.model.Usuario;
 import archivos.manejoArchivos;
-import static ec.edu.espol.avance.Usuario.añadirUsuario;
+import static ec.edu.espol.model.Usuario.añadirUsuario;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import javafx.application.Application;
@@ -15,6 +17,8 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javafx.scene.control.Alert;
 
 /**
@@ -110,6 +114,31 @@ public class App extends Application {
     
     public static boolean validarUsuario(String usuario,String contra)
     {
+        
+        // Comprobar si el usuario o la contraseña están vacíos
+        if (usuario == null || usuario.trim().isEmpty() || contra == null || contra.trim().isEmpty()) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setHeaderText(null);
+            alert.setTitle("Login");
+            alert.setContentText("Usuario o contraseña no pueden estar vacíos");
+            alert.showAndWait();
+            return false;
+        }
+        
+        // Validar que el usuario sea un correo electrónico
+        String regex = "^[A-Za-z0-9+_.-]+@(.+)$";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(usuario);
+        if (!matcher.matches()) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setHeaderText(null);
+            alert.setTitle("Login");
+            alert.setContentText("El nombre de usuario debe ser un correo electrónico válido");
+            alert.showAndWait();
+            return false;
+        }
+        
+        
         ArrayList<Usuario> us = deSerializar("usuarios.ser");
         boolean bool = false;
         for(Usuario u:us){

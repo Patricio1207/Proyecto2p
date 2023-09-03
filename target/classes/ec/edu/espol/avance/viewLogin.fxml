@@ -6,11 +6,10 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/20.0.1" fx:controller="ec.edu.espol.avance.ViewLoginController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ec.edu.espol.controllers.ViewLoginController">
    <children>
-      <Button fx:id="btnLogin" layoutX="234.0" layoutY="222.0" mnemonicParsing="false" onAction="#login" text="Login" />
-      <Button fx:id="btnRegresar" layoutX="301.0" layoutY="222.0" mnemonicParsing="false" onAction="#regresar" text="Regresar" />
+      <Button fx:id="btnLogin" layoutX="234.0" layoutY="222.0" mnemonicParsing="false" onMouseClicked="#login" text="Login" />
+      <Button fx:id="btnRegresar" layoutX="301.0" layoutY="222.0" mnemonicParsing="false" onMouseClicked="#regresar" text="Regresar" />
       <TextField fx:id="txtUsuario" layoutX="226.0" layoutY="131.0" />
       <PasswordField fx:id="txtContra" layoutX="226.0" layoutY="175.0" />
       <Label layoutX="162.0" layoutY="135.0" text="Usuario" />
