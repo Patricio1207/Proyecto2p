@@ -2,7 +2,6 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.PasswordField?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
@@ -12,13 +11,13 @@
    <center>
       <VBox alignment="CENTER" prefHeight="400.0" prefWidth="420.0" spacing="15.0" BorderPane.alignment="CENTER">
          <children>
-            <HBox alignment="CENTER" prefHeight="30.0" prefWidth="470.0" spacing="70.0">
+            <HBox alignment="CENTER" prefHeight="30.0" prefWidth="470.0" spacing="50.0">
                <children>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Usuario:" />
-                  <TextField fx:id="txUser" />
+                  <Text fx:id="txUser" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
                </children>
             </HBox>
-            <HBox alignment="CENTER" prefHeight="30.0" prefWidth="200.0" spacing="50.0">
+            <HBox alignment="CENTER" prefHeight="30.0" prefWidth="200.0" spacing="47.0">
                <children>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Contraseña:" />
                   <PasswordField fx:id="txContr" />
@@ -34,6 +33,7 @@
                <children>
                   <Button fx:id="btncambiar" mnemonicParsing="false" onAction="#cambiarContraseña" text="Cambiar contraseña" />
                   <Button fx:id="btnSalir" mnemonicParsing="false" onAction="#salir" text="Salir" />
+                  <Button fx:id="btnRegresar" mnemonicParsing="false" onAction="#regresar" text="Regresar" />
                </children>
             </HBox>
          </children>

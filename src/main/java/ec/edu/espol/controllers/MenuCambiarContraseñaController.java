@@ -20,6 +20,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 /**
@@ -30,7 +31,7 @@ import javafx.stage.Stage;
 public class MenuCambiarContraseñaController implements Initializable {
 
     @FXML
-    private TextField txUser;
+    private Text txUser;
     @FXML
     private TextField txContr;
     @FXML
@@ -39,18 +40,22 @@ public class MenuCambiarContraseñaController implements Initializable {
     private Button btncambiar;
     @FXML
     private Button btnSalir;
+    
+    private String user;
+    @FXML
+    private Button btnRegresar;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        btnSalir.setVisible(false);
     }    
 
     @FXML
     private void cambiarContraseña(ActionEvent event) {
-        String user = txUser.getText();
+        System.out.println("u"+user);
         String cont = txContr.getText();
         String contn = tsContraN.getText();
         ArrayList<Usuario> usuarios = readUsers();
@@ -67,11 +72,12 @@ public class MenuCambiarContraseñaController implements Initializable {
             addUsers(usuariosNuevos);
             Alert a = new Alert(Alert.AlertType.INFORMATION,"Contraseña cambiada");
             a.show();
+            btnRegresar.setVisible(false);
+            btnSalir.setVisible(true);
         }else{
             Alert a = new Alert(Alert.AlertType.ERROR,"El usuario o contraseña son incorrectos");
             a.show();
         }
-        txUser.clear();
         txContr.clear();
         tsContraN.clear();
     }
@@ -100,4 +106,37 @@ public class MenuCambiarContraseñaController implements Initializable {
         }
     }
     
+    public void setUser(String u) {
+        this.user = u;
+    }
+
+    @FXML
+    private void regresar(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/ec/edu/espol/avance/MenuTipoUsuario.fxml"));
+
+            Parent root = loader.load();
+
+            MenuTipoUsuarioController controlador = loader.getController();
+
+            Scene scene = new Scene(root);
+            Stage stage = new Stage();
+
+            stage.setScene(scene);
+            stage.show();
+
+
+            Stage myStage = (Stage) this.btnRegresar.getScene().getWindow();
+            myStage.close();
+            
+        } catch (Exception ex) {
+        ex.printStackTrace();
+        }
+    }
+    public void setTx(String a){
+        txUser.setText(a);
+    }
+
+    
 }
+

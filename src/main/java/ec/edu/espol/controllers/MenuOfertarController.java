@@ -67,16 +67,7 @@ public class MenuOfertarController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-//        tx1.setText("Placa: "+this.vehiculo.getPlaca()); //Quiero agregar las vainas del carro pero no me deja
-//        tx2.setText("Marca: "+this.vehiculo.getMarca()); //Si descomentas no te deja pasar sgte pagina
-//        tx3.setText("Modelo: "+this.vehiculo.getModelo());
-//        tx4.setText("Motor: "+this.vehiculo.getTipoMotor());
-//        tx5.setText("Año: "+this.vehiculo.getAño());
-//        tx6.setText("Recorrido: "+this.vehiculo.getRecorrido());
-//        tx7.setText("Color: "+this.vehiculo.getColor());
-//        tx8.setText("Combustible: "+this.vehiculo.getCombustible());
-//        tx9.setText("Precio: "+this.vehiculo.getPrecio());
-//        tx10.setText("Tipo: "+this.vehiculo.getTipo());
+        
         Image im = new Image("img/auto1.jpeg");
         imgv.setImage(im);
     }    
@@ -127,6 +118,18 @@ public class MenuOfertarController implements Initializable {
     }
     public void setUltimoCodigoOferta(int ultimoCodigoOferta) {
         this.ultimoCodigoOferta = ultimoCodigoOferta;
+    }
+    public void setTx(String p, String m, String mo, String mot, String an, String rec, String col, String comb, String pre, String tip){
+        tx1.setText("Placa: "+p); 
+        tx2.setText("Marca: "+m); 
+        tx3.setText("Modelo: "+mo);
+        tx4.setText("Motor: "+mot);
+        tx5.setText("Año: "+an);
+        tx6.setText("Recorrido: "+rec);
+        tx7.setText("Color: "+col);
+        tx8.setText("Combustible: "+comb);
+        tx9.setText("Precio: "+pre);
+        tx10.setText("Tipo: "+tip);
     }
 
 }

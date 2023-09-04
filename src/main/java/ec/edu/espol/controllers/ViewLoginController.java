@@ -82,6 +82,8 @@ public class ViewLoginController implements Initializable {
                 Parent root = loader.load();
 
                 MenuTipoUsuarioController controlador = loader.getController();
+                
+                controlador.setUser(txtUsuario);
 
                 Scene scene = new Scene(root);
                 Stage stage = new Stage();

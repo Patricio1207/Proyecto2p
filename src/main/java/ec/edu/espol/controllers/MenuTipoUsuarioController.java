@@ -35,6 +35,8 @@ public class MenuTipoUsuarioController implements Initializable {
     private Button btnCom;
     @FXML
     private Button btnCC;
+    
+    private String usuario;
 
     /**
      * Initializes the controller class.
@@ -46,7 +48,7 @@ public class MenuTipoUsuarioController implements Initializable {
         tx1.setText("Escoja su tipo de usuario o cambie su contraseña");
         btnVen.setText("Vendedor");
         btnCom.setText("Comprador");
-        btnCC.setText("Cambiar Contraseña");
+        btnCC.setText("Ver perfil");
     }    
 
     @FXML
@@ -99,7 +101,9 @@ public class MenuTipoUsuarioController implements Initializable {
             Parent root = loader.load();
 
             MenuCambiarContraseñaController menuController = loader.getController();
-
+            
+            menuController.setUser(usuario);
+            menuController.setTx(usuario);
             Stage stage = new Stage();
             Scene scene = new Scene(root);
             stage.setScene(scene);
@@ -110,6 +114,9 @@ public class MenuTipoUsuarioController implements Initializable {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+    public void setUser(String user) {
+        this.usuario = user;
     }
     
     

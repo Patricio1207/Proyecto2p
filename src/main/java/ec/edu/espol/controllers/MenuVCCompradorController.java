@@ -184,16 +184,17 @@ public class MenuVCCompradorController implements Initializable {
 
     @FXML
     private void ofertar(ActionEvent event) {
-        Vehiculo vehiculoSeleccionado = tbvw.getSelectionModel().getSelectedItem();
-        if (vehiculoSeleccionado != null){
+        Vehiculo vS = tbvw.getSelectionModel().getSelectedItem();
+        if (vS != null){
             try {
                 FXMLLoader loader = new FXMLLoader(MenuOfertarController.class.getResource("/ec/edu/espol/avance/MenuOfertar.fxml"));
                 Parent root = loader.load();
                 MenuOfertarController controlador = loader.getController();
 
             // Pasar datos del vehículo y el último código de oferta al controlador de la ventana de oferta
-                controlador.setVehiculo(vehiculoSeleccionado);
+                controlador.setVehiculo(vS);
                 controlador.setUltimoCodigoOferta(ultimoCodigoOferta);
+                controlador.setTx(vS.getPlaca(), vS.getMarca(), vS.getModelo(), vS.getTipoMotor(), String.valueOf(vS.getAño()), String.valueOf(vS.getRecorrido()), vS.getColor(), vS.getCombustible(), String.valueOf(vS.getPrecio()), vS.getTipo());
 
                 Scene scene = new Scene(root);
                 Stage stage = new Stage();
