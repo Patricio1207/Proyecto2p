@@ -4,11 +4,13 @@
  */
 package ec.edu.espol.model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Personal
  */
-public class Auto extends Vehiculo {
+public class Auto extends Vehiculo implements Serializable{
     private String vidrios;
     private String transmision;
     

@@ -4,6 +4,7 @@
  */
 package ec.edu.espol.model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Objects;
 
@@ -13,8 +14,8 @@ import java.util.Objects;
  *
  * @author Personal
  */
-public class Oferta {
-    //private Comprador comprador;
+public class Oferta implements Serializable{
+    private Usuario usuario;
     private double precio;
     private Vehiculo vehiculo;
     private String codigo;
@@ -50,16 +51,16 @@ public class Oferta {
         this.codigo = codigo;
     }
     
-//    public Oferta(Comprador comprador, double precio, Vehiculo vehiculo) {
-//        this.comprador = comprador;
-//        this.precio = precio;
-//        this.vehiculo = vehiculo;
-//        codigo = ++cod;
-//    }
-//
-//    public Comprador getComprador() {
-//        return comprador;
-//    }
+    public Oferta(Usuario usuario, double precio, Vehiculo vehiculo) {
+        this.usuario = usuario;
+        this.precio = precio;
+        this.vehiculo = vehiculo;
+        //codigo = ++cod;
+    }
+
+    public Usuario getComprador() {
+        return usuario;
+    }
 
     public double getPrecio() {
         return precio;
@@ -73,30 +74,30 @@ public class Oferta {
 //        Proyecto1p.addOferta(this);
     }
 
-//    @Override
-//    public String toString() {
-//        return codigo + "," + comprador.getNombres() + ","+ comprador.getCorreoElectronico()+
-//                "," + vehiculo.getPlaca() + "," + precio ;
-//    }
+    @Override
+    public String toString() {
+        return codigo + "," + ","+ usuario.getCorreoElectronico()+
+                "," + vehiculo.getPlaca() + "," + precio ;
+    }
 
 
-//    @Override
-//    public boolean equals(Object obj) {
-//        if (this == obj) {
-//            return true;
-//        }
-//        if (obj == null) {
-//            return false;
-//        }
-//        if (getClass() != obj.getClass()) {
-//            return false;
-//        }
-//        final Oferta other = (Oferta) obj;
-//        if (this.codigo != other.codigo) {
-//            return false;
-//        }
-//        return Objects.equals(this.comprador, other.comprador);
-//    }
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Oferta other = (Oferta) obj;
+        if (this.codigo != other.codigo) {
+            return false;
+        }
+        return Objects.equals(this.usuario, other.usuario);
+    }
     
     
 }

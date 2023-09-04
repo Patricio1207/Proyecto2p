@@ -30,6 +30,7 @@ public class App extends Application {
     private static Scene scene;
     
     public static ArrayList<Vehiculo> vehiculos = new ArrayList<>();
+    public static ArrayList<Oferta> ofertas = new ArrayList<>();
 
     @Override
     public void start(Stage stage) throws IOException {
@@ -52,7 +53,6 @@ public class App extends Application {
         ArrayList<Usuario> usuarios = new ArrayList<>();
         serializar(usuarios);
         launch();
-        System.out.println(vehiculos);
         
         
     } 
@@ -199,6 +199,8 @@ public class App extends Application {
                 System.out.println("No se pudo escribir");
             }
     }
+    
+    
     public static ArrayList<Oferta> readOffers() {
         ArrayList<Oferta> listaOfertas = new ArrayList<>();
         try (FileInputStream fileIn = new FileInputStream("ofertas.ser");
@@ -211,8 +213,9 @@ public class App extends Application {
         return listaOfertas;
     }
     public static void addOffer(Oferta of) {
-        ArrayList<Oferta> ofertas = readOffers();
-        ofertas.add(of);
+//        ArrayList<Oferta> ofertas = readOffers();
+//        ofertas.add(of);
+            ofertas.add(of);
         try {
             FileOutputStream fileOut = new FileOutputStream("ofertas.ser");
             ObjectOutputStream out = new ObjectOutputStream(fileOut);
@@ -228,7 +231,7 @@ public class App extends Application {
         ArrayList<Vehiculo> vehic = new ArrayList<>();
         //Primero se deben filtrar los datos
 
-        if (!tipo.equals("")) {
+        if (tipo != null && !tipo.equals("")) {
             vehic = Vehiculo.filter(tipo, vehiculos);
         }
 

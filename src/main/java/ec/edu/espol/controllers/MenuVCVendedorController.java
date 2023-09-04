@@ -86,6 +86,26 @@ public class MenuVCVendedorController implements Initializable {
 
     @FXML
     private void aceptarOferta(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/ec/edu/espol/avance/MenuAceptarOferta.fxml"));
+
+            Parent root = loader.load();
+
+            MenuAceptarOfertaController controlador = loader.getController();
+
+            Scene scene = new Scene(root);
+            Stage stage = new Stage();
+
+            stage.setScene(scene);
+            stage.show();
+
+
+            Stage myStage = (Stage) this.btnRegresar.getScene().getWindow();
+            myStage.close();
+            
+        } catch (Exception ex) {
+        ex.printStackTrace();
+        }
     }
 
     @FXML
