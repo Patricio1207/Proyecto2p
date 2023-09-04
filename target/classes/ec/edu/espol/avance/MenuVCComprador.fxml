@@ -41,9 +41,10 @@
          </columns></TableView>
    </center>
    <bottom>
-      <HBox fx:id="hb1" prefHeight="54.0" prefWidth="586.0" BorderPane.alignment="CENTER">
+      <HBox fx:id="hb1" prefHeight="54.0" prefWidth="586.0" spacing="15.0" BorderPane.alignment="CENTER">
          <children>
             <Button fx:id="btnRegresar" mnemonicParsing="false" onAction="#regresar" text="Button" />
+            <Button fx:id="btnOfertar" mnemonicParsing="false" onAction="#ofertar" text="Button" />
          </children>
       </HBox>
    </bottom>

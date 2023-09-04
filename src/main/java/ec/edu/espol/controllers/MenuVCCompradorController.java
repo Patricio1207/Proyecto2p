@@ -30,6 +30,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import static ec.edu.espol.avance.App.filtrarVehiculos;
+import javafx.stage.Modality;
 
 /**
  * FXML Controller class
@@ -88,6 +89,11 @@ public class MenuVCCompradorController implements Initializable {
     private TableColumn<Vehiculo, String> tipoColumn;
     
     private ArrayList<Vehiculo> vehiculos;
+    
+    @FXML
+    private Button btnOfertar;
+    
+    private int ultimoCodigoOferta = 0;
 
     /**
      * Initializes the controller class.
@@ -98,9 +104,10 @@ public class MenuVCCompradorController implements Initializable {
         vb1.setAlignment(Pos.CENTER);
         vb1.setSpacing(10);
         tx1.setText("Realice una oferta");
-        tx2.setText("Busque un vehíuclo y haga clic sobre el para ofertar");
+        tx2.setText("Busque un vehíuclo y haga clic en la fila y presione Ofertar");
         hb1.setAlignment(Pos.CENTER);
         btnRegresar.setText("Regresar");
+        btnOfertar.setText("Ofertar");
         cbTipo.getItems().addAll("Auto","Camioneta","Moto");
         
         placaColumn.setCellValueFactory(cellData -> new ReadOnlyStringWrapper(cellData.getValue().getPlaca()));
@@ -173,6 +180,55 @@ public class MenuVCCompradorController implements Initializable {
             Alert a = new Alert(Alert.AlertType.ERROR,"Debe ingresar un número todas las casillas");
         }
         
+    }
+
+    @FXML
+    private void ofertar(ActionEvent event) {
+        Vehiculo vehiculoSeleccionado = tbvw.getSelectionModel().getSelectedItem();
+        if (vehiculoSeleccionado != null){
+            try {
+                FXMLLoader loader = new FXMLLoader(MenuOfertarController.class.getResource("/ec/edu/espol/avance/MenuOfertar.fxml"));
+                Parent root = loader.load();
+                MenuOfertarController controlador = loader.getController();
+
+            // Pasar datos del vehículo y el último código de oferta al controlador de la ventana de oferta
+                controlador.setVehiculo(vehiculoSeleccionado);
+                controlador.setUltimoCodigoOferta(ultimoCodigoOferta);
+
+                Scene scene = new Scene(root);
+                Stage stage = new Stage();
+                stage.initModality(Modality.APPLICATION_MODAL);
+                stage.setScene(scene);
+            
+            // Mostrar la ventana de oferta
+                stage.showAndWait();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+//            try {
+//        
+//                FXMLLoader loader = new FXMLLoader(getClass().getResource("/ec/edu/espol/avance/MenuOfertarController.fxml"));
+//                Parent root = loader.load();
+//
+//                MenuOfertarController Controller = loader.getController();
+//            
+//                Controller.setVehiculo(vehiculoSeleccionado);
+//                Controller.setUltimoCodigoOferta(ultimoCodigoOferta);
+//
+//                Stage stage = new Stage();
+//                Scene scene = new Scene(root);
+//                stage.setScene(scene);
+//                stage.show();
+//
+//                ((Stage) (((Button) event.getSource()).getScene().getWindow())).close();
+//            } catch (Exception e) {
+//                e.printStackTrace();
+//            }
+        }
+
+    }
+    public void actualizarUltimoCodigoOferta(int nuevoCodigo) {
+        ultimoCodigoOferta = nuevoCodigo;
     }
     
     

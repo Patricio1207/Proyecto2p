@@ -3,6 +3,7 @@ package ec.edu.espol.avance;
 import ec.edu.espol.model.Vehiculo;
 import ec.edu.espol.model.Usuario;
 import archivos.manejoArchivos;
+import ec.edu.espol.model.Oferta;
 import static ec.edu.espol.model.Usuario.añadirUsuario;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -179,7 +180,7 @@ public class App extends Application {
         try (FileInputStream fileIn = new FileInputStream("usuarios.ser");
              ObjectInputStream objectIn = new ObjectInputStream(fileIn)) {
 
-            listaUsuarios = (ArrayList<Usuario>) objectIn.readObject();//Me sale que intento pasar un objeto Usuario a uno ArrayList
+            listaUsuarios = (ArrayList<Usuario>) objectIn.readObject();
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
         }
@@ -198,17 +199,38 @@ public class App extends Application {
                 System.out.println("No se pudo escribir");
             }
     }
+    public static ArrayList<Oferta> readOffers() {
+        ArrayList<Oferta> listaOfertas = new ArrayList<>();
+        try (FileInputStream fileIn = new FileInputStream("ofertas.ser");
+             ObjectInputStream objectIn = new ObjectInputStream(fileIn)) {
+
+            listaOfertas = (ArrayList<Oferta>) objectIn.readObject();
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        return listaOfertas;
+    }
+    public static void addOffer(Oferta of) {
+        ArrayList<Oferta> ofertas = readOffers();
+        ofertas.add(of);
+        try {
+            FileOutputStream fileOut = new FileOutputStream("ofertas.ser");
+            ObjectOutputStream out = new ObjectOutputStream(fileOut);
+            out.writeObject(ofertas);
+            out.close();
+            fileOut.close();
+        } catch (IOException e) {
+            System.out.println("No puedo escribir el objeto");
+        }
+    }
     
     public static ArrayList<Vehiculo> filtrarVehiculos(String tipo,double recInf,double recSup,int anoInf,int anoSup,double precioInf,double precioSup,ArrayList<Vehiculo> vehiculos) {
         ArrayList<Vehiculo> vehic = new ArrayList<>();
         //Primero se deben filtrar los datos
-        System.out.println(vehiculos);
-        System.out.println(vehic);
 
         if (!tipo.equals("")) {
             vehic = Vehiculo.filter(tipo, vehiculos);
         }
-        System.out.println(vehic);
 
         if (recInf > 0 && recSup > 0 && recInf <= recSup) {
             vehic = Vehiculo.filter(recInf, recSup, vehic, "recorrido");
@@ -221,7 +243,6 @@ public class App extends Application {
         if (precioInf > 0 && precioSup > 0 && precioInf <= precioSup) {
             vehic = Vehiculo.filter(precioInf, precioSup, vehic, "precio");
         }
-        System.out.println(vehic);
         return vehic;//Cambié para que me dé la lista filtrada
         //Mostrar al usuario
 //        for (int i = 0; i < vehic.size(); i++) {

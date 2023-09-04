@@ -17,10 +17,15 @@ public class Oferta {
     //private Comprador comprador;
     private double precio;
     private Vehiculo vehiculo;
-    private int codigo;
+    private String codigo;
     
     private static int cod = 0;
     
+    public Oferta(Vehiculo vehi, double precio, String codigo){
+        this.vehiculo=vehi;
+        this.precio=precio;
+        this.codigo=codigo;
+    }
     public static void removeOfertas(ArrayList<Oferta> ofertas){
         ArrayList<Integer> indices = new ArrayList<>();
         for(Oferta ofe: ofertas){
@@ -31,6 +36,18 @@ public class Oferta {
         for(Integer indice: indices){
 //            Proyecto1p.remove("ofertas.txt", indice);
         }
+    }
+
+    public void setPrecio(double precio) {
+        this.precio = precio;
+    }
+
+    public void setVehiculoo(Vehiculo vehiculo) {
+        this.vehiculo = vehiculo;
+    }
+
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
     }
     
 //    public Oferta(Comprador comprador, double precio, Vehiculo vehiculo) {
