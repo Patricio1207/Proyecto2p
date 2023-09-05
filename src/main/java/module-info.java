@@ -3,6 +3,7 @@ module ec.edu.espol.avance {
     requires javafx.fxml;
     requires java.base;
     requires java.logging;
+    requires java.mail;
 
     opens ec.edu.espol.avance to javafx.fxml;
     exports ec.edu.espol.avance;

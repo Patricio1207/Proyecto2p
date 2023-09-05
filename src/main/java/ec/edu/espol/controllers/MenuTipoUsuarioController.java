@@ -4,6 +4,8 @@
  */
 package ec.edu.espol.controllers;
 
+import ec.edu.espol.avance.App;
+import ec.edu.espol.model.Usuario;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -102,8 +104,8 @@ public class MenuTipoUsuarioController implements Initializable {
 
             MenuCambiarContraseñaController menuController = loader.getController();
             
-            menuController.setUser(usuario);
-            menuController.setTx(usuario);
+            menuController.setUser(App.uss);
+            menuController.setTx(App.uss);
             Stage stage = new Stage();
             Scene scene = new Scene(root);
             stage.setScene(scene);

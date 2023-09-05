@@ -12,6 +12,7 @@ ec\edu\espol\controllers\ViewMenuVCController.class
 archivos\manejoArchivos.class
 ec\edu\espol\controllers\MenuOfertarController.class
 ec\edu\espol\controllers\ViewLoginController.class
+archivos\Utilidades.class
 ec\edu\espol\controllers\ViewRegistroVehiculoController.class
 ec\edu\espol\controllers\MenuTipoUsuarioController.class
 ec\edu\espol\model\Auto.class

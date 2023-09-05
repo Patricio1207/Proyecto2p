@@ -4,6 +4,7 @@
  */
 package ec.edu.espol.controllers;
 
+import archivos.Utilidades;
 import ec.edu.espol.avance.App;
 import ec.edu.espol.model.Oferta;
 import ec.edu.espol.model.Vehiculo;
@@ -139,12 +140,14 @@ public class MenuAceptarOfertaController implements Initializable {
             alert.setContentText("No hay ninguna oferta");
             alert.showAndWait();
         }else{
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setHeaderText(null);
-        alert.setTitle("Aceptacion de oferta");
-        alert.setContentText("Oferta Aceptada");
-        alert.showAndWait();
-        ofertas.remove(0);
+            Utilidades.enviarConGMail(App.lUs.get(0).getCorreoElectronico(), App.lUs.get(0).getClave(), App.lUs.get(0).getCorreoElectronico(), "Confirmacion de oferta", "Felicidades, el vendedor acaba de confirmar su oferta");
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setHeaderText(null);
+            alert.setTitle("Aceptacion de oferta");
+            alert.setContentText("Oferta Aceptada");
+            alert.showAndWait();
+            ofertas.remove(0);
+        
         }
     }
 

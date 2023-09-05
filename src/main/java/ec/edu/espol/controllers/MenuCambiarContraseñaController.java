@@ -4,6 +4,7 @@
  */
 package ec.edu.espol.controllers;
 
+import ec.edu.espol.avance.App;
 import ec.edu.espol.model.Usuario;
 import static ec.edu.espol.avance.App.addUsers;
 import static ec.edu.espol.avance.App.readUsers;
@@ -55,18 +56,20 @@ public class MenuCambiarContraseñaController implements Initializable {
 
     @FXML
     private void cambiarContraseña(ActionEvent event) {
-        System.out.println("u"+user);
+//        System.out.println("u"+user);
+        txUser.setText(App.uss);
         String cont = txContr.getText();
         String contn = tsContraN.getText();
         ArrayList<Usuario> usuarios = readUsers();
         ArrayList<Usuario> usuariosNuevos = new ArrayList<>();
-        if(validarUsuario(user,cont)){
+        if(validarUsuario(App.uss,cont)){
             for(Usuario u:usuarios){
-                if(!(u.getCorreoElectronico().equals(user)&&u.getClave().equals(cont))){
+                Usuario usua = new Usuario(App.uss,cont);
+                if(!(u.getCorreoElectronico().equals(usua.getCorreoElectronico())&&u.getClave().equals(cont))){
                     usuariosNuevos.add(u);
                 }
             }
-            Usuario nuevoUsuario = new Usuario(user, contn);
+            Usuario nuevoUsuario = new Usuario(App.uss, contn);
             usuariosNuevos.add(nuevoUsuario);
             // Llamar al método para guardar los usuarios en el archivo serializado
             addUsers(usuariosNuevos);

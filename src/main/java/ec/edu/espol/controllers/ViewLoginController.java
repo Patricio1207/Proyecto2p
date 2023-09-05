@@ -4,7 +4,9 @@
  */
 package ec.edu.espol.controllers;
 
+import ec.edu.espol.avance.App;
 import static ec.edu.espol.avance.App.validarUsuario;
+import ec.edu.espol.model.Usuario;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -76,6 +78,9 @@ public class ViewLoginController implements Initializable {
         String txtUsuario = this.txtUsuario.getText();
         String txtContra = this.txtContra.getText();
         if(validarUsuario(txtUsuario,txtContra)){
+            App.uss = txtUsuario;
+            App.co = txtContra;
+            App.lUs.add(new Usuario(txtUsuario,txtContra));
             try {
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/ec/edu/espol/avance/MenuTipoUsuario.fxml"));
 

@@ -31,6 +31,9 @@ public class App extends Application {
     
     public static ArrayList<Vehiculo> vehiculos = new ArrayList<>();
     public static ArrayList<Oferta> ofertas = new ArrayList<>();
+    public static String uss;
+    public static String co;
+    public static ArrayList<Usuario> lUs = new ArrayList<>();
 
     @Override
     public void start(Stage stage) throws IOException {
