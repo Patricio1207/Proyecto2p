@@ -68,8 +68,7 @@ public class MenuOfertarController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         
-        Image im = new Image("img/auto1.jpeg");
-        imgv.setImage(im);
+        
     }    
 
     @FXML
@@ -130,6 +129,10 @@ public class MenuOfertarController implements Initializable {
         tx8.setText("Combustible: "+comb);
         tx9.setText("Precio: "+pre);
         tx10.setText("Tipo: "+tip);
+    }
+    public void setImage(String tipo){
+        Image im = new Image("img/"+tipo+"1.jpg");
+        imgv.setImage(im);
     }
 
 }

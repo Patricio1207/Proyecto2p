@@ -8,6 +8,9 @@ import ec.edu.espol.avance.App;
 import ec.edu.espol.model.Auto;
 import static ec.edu.espol.model.Vehiculo.existVehiculo;
 import static ec.edu.espol.avance.App.addVehiculo;
+import ec.edu.espol.model.Camioneta;
+import ec.edu.espol.model.Motocicleta;
+import ec.edu.espol.model.Vehiculo;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -23,8 +26,10 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 /**
@@ -62,6 +67,14 @@ public class ViewRegistroVehiculoController implements Initializable {
     private Button btnRegresar;
     @FXML
     private Button btnRegistrarV;
+    @FXML
+    private TextField txtTraccion;
+    @FXML
+    private Label textVidrio;
+    @FXML
+    private Label textTrans;
+    @FXML
+    private Text textTrac;
 
     /**
      * Initializes the controller class.
@@ -69,9 +82,32 @@ public class ViewRegistroVehiculoController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         cboxTipo.getItems().addAll("Auto","Camioneta","Moto");
-        cboxTipo.setOnAction(actionEvent -> cboxTipo.getValue());
+        cboxTipo.valueProperty().addListener((observable, oldValue, newValue) -> {
+            handleVehicleTipo(newValue);
+        });
         
-    } 
+    }
+    private void handleVehicleTipo(String vehiculoSeleccionado) {
+        txtVidrios.setVisible(false);
+        txtTransmision.setVisible(false);
+        txtTraccion.setVisible(false);
+        textVidrio.setVisible(false);
+        textTrans.setVisible(false);
+        textTrac.setVisible(false);
+        if ("Auto".equals(vehiculoSeleccionado)) {
+            txtVidrios.setVisible(true);
+            txtTransmision.setVisible(true);
+            textVidrio.setVisible(true);
+            textTrans.setVisible(true);
+        } else if ("Camioneta".equals(vehiculoSeleccionado)) {
+            txtVidrios.setVisible(true);
+            txtTransmision.setVisible(true);
+            txtTraccion.setVisible(true);
+            textVidrio.setVisible(true);
+            textTrans.setVisible(true);
+            textTrac.setVisible(true);
+        }
+    }
     
 //    public void closeWindows()
 //    {     
@@ -102,32 +138,29 @@ public class ViewRegistroVehiculoController implements Initializable {
         String txtPlaca = this.txtPlaca.getText();
         String txtMarca = this.txtMarca.getText();
         String txtModelo = this.txtModelo.getText();
-        String txtColor = this.txtColor.getText();
-        double txtRecorrido = Double.parseDouble(this.txtRecorrido.getText());
+        String txtColor = this.txtColor.getText();       
         String txtCombustible = this.txtCombustible.getText();
-        double txtPrecio = Double.parseDouble(this.txtPrecio.getText());
         String txtMotor = this.txtMotor.getText();
-        String txtVidrios = this.txtVidrios.getText();
-        int txtAno = Integer.parseInt(this.txtAno.getText());
+        String txtVidrios = this.txtVidrios.getText(); 
         String txtTransmision = this.txtTransmision.getText();
-        
-        Auto a = new Auto(txtPlaca,txtMarca,txtModelo,txtMotor,txtAno,txtRecorrido,txtColor,txtCombustible,txtPrecio,txtVidrios,txtTransmision);
-        
-        if(!existVehiculo(a,App.vehiculos)){
-            addVehiculo(a);
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setHeaderText(null);
-            alert.setTitle("Registrar Vehiculo");
-            alert.setContentText("Vehiculo registrado existosamente");
-            alert.showAndWait();
-            
-        }else{
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setHeaderText(null);
-            alert.setTitle("Registrar Vehiculo");
-            alert.setContentText("Vehiculo ya esta registrado");
-            alert.showAndWait();
-        }
+        String txtTraccion = this.txtTraccion.getText();
+        try{
+            int txtAno = Integer.parseInt(this.txtAno.getText());
+            double txtRecorrido = Double.parseDouble(this.txtRecorrido.getText());
+            double txtPrecio = Double.parseDouble(this.txtPrecio.getText());
+            if(cboxTipo.equals("Auto")){
+                Auto a = new Auto(txtPlaca,txtMarca,txtModelo,txtMotor,txtAno,txtRecorrido,txtColor,txtCombustible,txtPrecio,txtVidrios,txtTransmision);
+                validaRegistraVehiculo(a);
+            }else if(cboxTipo.equals("Camioneta")){
+                Camioneta a = new Camioneta(txtPlaca,txtMarca,txtModelo,txtMotor,txtAno,txtRecorrido,txtColor,txtCombustible,txtPrecio,txtVidrios,txtTransmision,txtTraccion);
+                validaRegistraVehiculo(a);
+            }else{
+                Motocicleta a = new Motocicleta(txtPlaca,txtMarca,txtModelo,txtMotor,txtAno,txtRecorrido,txtColor,txtCombustible,txtPrecio);
+                validaRegistraVehiculo(a);
+            }
+        }catch(NumberFormatException e){
+            Alert a = new Alert(Alert.AlertType.ERROR,"Algunas casillas solo aceptan valores numéricos");
+        }        
     }
 
     @FXML
@@ -153,5 +186,21 @@ public class ViewRegistroVehiculoController implements Initializable {
         ex.printStackTrace();
         }
     }
-    
+    public void validaRegistraVehiculo(Vehiculo v){
+        if(!existVehiculo(v,App.vehiculos)){
+                    addVehiculo(v);
+                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                    alert.setHeaderText(null);
+                    alert.setTitle("Registrar Vehiculo");
+                    alert.setContentText("Vehiculo registrado existosamente");
+                    alert.showAndWait();
+
+                }else{
+                    Alert alert = new Alert(Alert.AlertType.ERROR);
+                    alert.setHeaderText(null);
+                    alert.setTitle("Registrar Vehiculo");
+                    alert.setContentText("Vehiculo ya esta registrado");
+                    alert.showAndWait();
+                }
+    }
 }

@@ -30,6 +30,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import static ec.edu.espol.avance.App.filtrarVehiculos;
+import static ec.edu.espol.avance.App.readVehiculos;
 import javafx.stage.Modality;
 
 /**
@@ -108,7 +109,7 @@ public class MenuVCCompradorController implements Initializable {
         hb1.setAlignment(Pos.CENTER);
         btnRegresar.setText("Regresar");
         btnOfertar.setText("Ofertar");
-        cbTipo.getItems().addAll("Auto","Camioneta","Moto");
+        cbTipo.getItems().addAll("Auto","Camioneta","Motocicleta");
         
         placaColumn.setCellValueFactory(cellData -> new ReadOnlyStringWrapper(cellData.getValue().getPlaca()));
         marcaColumn.setCellValueFactory(cellData -> new ReadOnlyStringWrapper(cellData.getValue().getMarca()));
@@ -174,7 +175,7 @@ public class MenuVCCompradorController implements Initializable {
             precioColumn.setCellValueFactory(cellData -> new ReadOnlyStringWrapper(String.valueOf(cellData.getValue().getPrecio())));
             tipoColumn.setCellValueFactory(cellData -> new ReadOnlyStringWrapper(String.valueOf(cellData.getValue().getTipo())));
             ObservableList<Vehiculo> vehiculosObservable = FXCollections.observableArrayList(vehiculosFiltrados);
-            tbvw.setItems(vehiculosObservable); // No sirve no se porqué
+            tbvw.setItems(vehiculosObservable);
             
         }catch(NumberFormatException e){
             Alert a = new Alert(Alert.AlertType.ERROR,"Debe ingresar un número todas las casillas");
@@ -195,36 +196,22 @@ public class MenuVCCompradorController implements Initializable {
                 controlador.setVehiculo(vS);
                 controlador.setUltimoCodigoOferta(ultimoCodigoOferta);
                 controlador.setTx(vS.getPlaca(), vS.getMarca(), vS.getModelo(), vS.getTipoMotor(), String.valueOf(vS.getAño()), String.valueOf(vS.getRecorrido()), vS.getColor(), vS.getCombustible(), String.valueOf(vS.getPrecio()), vS.getTipo());
-
+                controlador.setImage(vS.getTipo());
+                
                 Scene scene = new Scene(root);
                 Stage stage = new Stage();
                 stage.initModality(Modality.APPLICATION_MODAL);
                 stage.setScene(scene);
+                
+                Stage myStage = (Stage) this.btnOfertar.getScene().getWindow();
+                myStage.close();
+                
             
             // Mostrar la ventana de oferta
                 stage.showAndWait();
             } catch (Exception e) {
                 e.printStackTrace();
             }
-//            try {
-//        
-//                FXMLLoader loader = new FXMLLoader(getClass().getResource("/ec/edu/espol/avance/MenuOfertarController.fxml"));
-//                Parent root = loader.load();
-//
-//                MenuOfertarController Controller = loader.getController();
-//            
-//                Controller.setVehiculo(vehiculoSeleccionado);
-//                Controller.setUltimoCodigoOferta(ultimoCodigoOferta);
-//
-//                Stage stage = new Stage();
-//                Scene scene = new Scene(root);
-//                stage.setScene(scene);
-//                stage.show();
-//
-//                ((Stage) (((Button) event.getSource()).getScene().getWindow())).close();
-//            } catch (Exception e) {
-//                e.printStackTrace();
-//            }
         }
 
     }

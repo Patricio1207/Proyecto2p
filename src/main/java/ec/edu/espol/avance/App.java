@@ -202,6 +202,17 @@ public class App extends Application {
                 System.out.println("No se pudo escribir");
             }
     }
+    public static ArrayList<Vehiculo> readVehiculos() {
+        ArrayList<Vehiculo> listaVehiculos = new ArrayList<>();
+        try (FileInputStream fileIn = new FileInputStream("vehiculos.ser");
+             ObjectInputStream objectIn = new ObjectInputStream(fileIn)) {
+
+            listaVehiculos = (ArrayList<Vehiculo>) objectIn.readObject();
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        return listaVehiculos;
+    }
     
     
     public static ArrayList<Oferta> readOffers() {

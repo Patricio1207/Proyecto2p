@@ -6,8 +6,9 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ec.edu.espol.controllers.ViewRegistroVehiculoController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ec.edu.espol.controllers.ViewRegistroVehiculoController">
    <children>
       <ChoiceBox fx:id="cboxTipo" layoutX="120.0" layoutY="63.0" prefWidth="150.0" />
       <Label layoutX="80.0" layoutY="67.0" text="Tipo" />
@@ -15,30 +16,32 @@
       <Label layoutX="78.0" layoutY="107.0" text="Placa" />
       <TextField fx:id="txtMarca" layoutX="121.0" layoutY="145.0" />
       <TextField fx:id="txtModelo" layoutX="121.0" layoutY="188.0" />
-      <TextField fx:id="txtColor" layoutX="397.0" layoutY="103.0" />
-      <TextField fx:id="txtRecorrido" layoutX="397.0" layoutY="63.0" />
-      <TextField fx:id="txtCombustible" layoutX="397.0" layoutY="145.0" />
-      <TextField fx:id="txtPrecio" layoutX="397.0" layoutY="188.0" />
+      <TextField fx:id="txtColor" layoutX="397.0" layoutY="63.0" />
+      <TextField fx:id="txtRecorrido" layoutX="121.0" layoutY="317.0" />
+      <TextField fx:id="txtCombustible" layoutX="397.0" layoutY="103.0" />
+      <TextField fx:id="txtPrecio" layoutX="397.0" layoutY="145.0" />
       <TextField fx:id="txtMotor" layoutX="121.0" layoutY="233.0" />
-      <TextField fx:id="txtVidrios" layoutX="397.0" layoutY="233.0" />
+      <TextField fx:id="txtVidrios" layoutX="397.0" layoutY="187.0" />
       <TextField fx:id="txtAno" layoutX="121.0" layoutY="277.0" />
-      <TextField fx:id="txtTransmision" layoutX="397.0" layoutY="277.0" />
+      <TextField fx:id="txtTransmision" layoutX="397.0" layoutY="232.0" />
       <Label layoutX="78.0" layoutY="149.0" text="Marca" />
       <Label layoutX="71.0" layoutY="192.0" text="Modelo" />
       <Label layoutX="78.0" layoutY="237.0" text="Motor" />
       <Label layoutX="78.0" layoutY="281.0" text="Año" />
-      <Label layoutX="327.0" layoutY="67.0" text="Recorrido" />
-      <Label layoutX="339.0" layoutY="107.0" text="Color" />
-      <Label layoutX="320.0" layoutY="149.0" text="Combustible" />
-      <Label layoutX="337.0" layoutY="192.0" text="Precio" />
-      <Label layoutX="335.0" layoutY="237.0" text="Vidrios" />
-      <Label layoutX="322.0" layoutY="281.0" text="Transmisión" />
+      <Label layoutX="48.0" layoutY="322.0" text="Recorrido" />
+      <Label layoutX="339.0" layoutY="67.0" text="Color" />
+      <Label layoutX="320.0" layoutY="107.0" text="Combustible" />
+      <Label layoutX="337.0" layoutY="150.0" text="Precio" />
+      <Label fx:id="textVidrio" layoutX="335.0" layoutY="193.0" text="Vidrios" />
+      <Label fx:id="textTrans" layoutX="318.0" layoutY="238.0" text="Transmisión" />
       <Label layoutX="213.0" layoutY="25.0" text="Registra un Vehiculo">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
       </Label>
-      <Button fx:id="btnRegresar" layoutX="327.0" layoutY="335.0" mnemonicParsing="false" onMouseClicked="#regresar" text="Regresar" />
-      <Button fx:id="btnRegistrarV" layoutX="244.0" layoutY="335.0" mnemonicParsing="false" onMouseClicked="#registrarVehiculo" text="Registrar" />
+      <Button fx:id="btnRegresar" layoutX="452.0" layoutY="317.0" mnemonicParsing="false" onMouseClicked="#regresar" text="Regresar" />
+      <Button fx:id="btnRegistrarV" layoutX="359.0" layoutY="317.0" mnemonicParsing="false" onMouseClicked="#registrarVehiculo" text="Registrar" />
+      <Text fx:id="textTrac" layoutX="329.0" layoutY="297.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Traccion" />
+      <TextField fx:id="txtTraccion" layoutX="397.0" layoutY="276.0" />
    </children>
 </AnchorPane>
